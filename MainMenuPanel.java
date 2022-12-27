@@ -29,6 +29,8 @@ class MainMenuPanel extends JPanel implements ActionListener{
 		b3.addActionListener(this);
 		
 		//instructions= new ImageIcon("InstructionsPoints.PNG"); png of the instructions
+		
+		
 	}
 	
 	public void actionPerformed(ActionEvent e) {
@@ -45,6 +47,7 @@ class MainMenuPanel extends JPanel implements ActionListener{
 			System.exit(0);
 		}	
     }
+
 	
 	public void paintComponent(Graphics g){
 	   super.paintComponent(g);

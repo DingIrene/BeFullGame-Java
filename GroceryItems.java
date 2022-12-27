@@ -8,20 +8,24 @@ import java.awt.image.*;
 class GroceryItems{
 	//Declaring variables
 	private int identity,x,y; 
-	private String[] imagesOfItems = {"images\\egg.PNG", "images\\milk.PNG","images\\strawberry.PNG"};
-	private BufferedImage image1, image2,image3;
+	private String[] imagesOfItems = {"images\\egg.PNG", "images\\milk.PNG","images\\strawberry.PNG","images\\bread.PNG","images\\flour.PNG","images\\sugar.PNG"};
+	private BufferedImage image1, image2,image3,image4,image5,image6;
 	
 	//Methods
 	public GroceryItems(){
 		//Randmizing the starting positions 
-		identity = (int)(Math.random()*3)+1; 
+		identity = (int)(Math.random()*6)+1; 
 		
 		y = (int)(((Math.random()*80)-100)*100);
 		x = (int)(((Math.random()*8)+1)*100);
+		
 		try {
             image1 = ImageIO.read(new File(imagesOfItems[0]));
 			image2 = ImageIO.read(new File(imagesOfItems[1])); 
 			image3 = ImageIO.read(new File(imagesOfItems[2])); 
+			image4 = ImageIO.read(new File(imagesOfItems[3]));
+			image5 = ImageIO.read(new File(imagesOfItems[4]));
+			image6 = ImageIO.read(new File(imagesOfItems[5]));
 			
         }catch(IOException e) {
             e.printStackTrace();
@@ -42,8 +46,14 @@ class GroceryItems{
 			g.drawImage(image1,x,y,null); 
 		}else if(identity == 2){
 			g.drawImage(image2,x,y,null); 
-		}else{
+		}else if(identity == 3){
 			g.drawImage(image3,x,y,null); 
+		}else if(identity == 4){
+			g.drawImage(image4,x,y,null); 
+		}else if(identity == 5){
+			g.drawImage(image5,x,y,null);
+		}else{
+			g.drawImage(image6,x,y,null);
 		}
     }	   
 	

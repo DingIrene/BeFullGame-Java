@@ -11,6 +11,7 @@ class BeFullMain extends JFrame{
 
 	MainMenuPanel mainScreen; 
 	GroceryGame game; 
+	OpeningScreen first;
 	
 	public BeFullMain(){
 		cont = getContentPane();
@@ -18,11 +19,13 @@ class BeFullMain extends JFrame{
 		cont.setLayout(cards); 
 		
 		// create an object of our game panel
+		//first = new OpeningScreen(); 
 		mainScreen = new MainMenuPanel();
 		game = new GroceryGame();
 		cont.add(game, BorderLayout.CENTER);
 			
 			// add this game panel to the center of the frame
+		//cont.add(first, BorderLayout.CENTER);
 		cont.add(mainScreen, BorderLayout.CENTER);
 		cont.add(game, BorderLayout.CENTER);
 			
