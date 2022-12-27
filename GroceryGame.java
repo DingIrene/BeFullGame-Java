@@ -19,14 +19,14 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 		this.setLayout(new BorderLayout()); 
 		start = new JButton("Start");
 		this.add(start, BorderLayout.SOUTH);
-	    //start.addActionListener(this);
+	    start.addActionListener(this);
 		//Printing out the shopping cart
 		t= new Timer(120,this);
 		t.start();
 		a1 = new GroceryBasket(0,450); 
 		this.addKeyListener(this);
 		setFocusable(true);
-		setFocusTraversalKeysEnabled(false); 
+		setFocusTraversalKeysEnabled(false);
 		
 		for(int i = 0; i < 12; i++){
 			items[i] = new GroceryItems(); 
@@ -40,7 +40,8 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 		a1.myDraw(g);
 		if(isReady == true){
 			for(int i = 0; i < 12; i++){
-				items[i].myDraw(g);  
+				items[i].move();
+				items[i].myDraw(g);
 			}
 		}
 	}
@@ -48,11 +49,7 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 	public void actionPerformed(ActionEvent e) {
 		//When start button is pressed 
 		if(e.getSource() == start){
-			isReady = true; 
-			for(int k = 0; k < 12; k++){
-				items[k].move(); 
-				repaint();
-			}
+			isReady = true;
 		}
 		//repositioning if cart is out of boundaries
 		if(a1.getX() <= 10){
@@ -63,8 +60,6 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 			a1.move(); 
 			repaint();
 		}
-		
-		
     }
 	
 	//Keylistener for the cart
@@ -81,12 +76,9 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 			System.out.print(KeyCode); 
 			a1.right(); 
 		}
-		
 	}
 	
 	public void keyReleased(KeyEvent e){
 		a1.release(); 
 	}
-	
 }
-       
