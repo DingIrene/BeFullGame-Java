@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 //Need to import the instructions image that will be in the popup of the instructions button
-//Nedd to make the cart as an object that can be movable
 
 class MainMenuPanel extends JPanel implements ActionListener{
 	//Declaring variables
@@ -15,7 +14,7 @@ class MainMenuPanel extends JPanel implements ActionListener{
 		
 	public MainMenuPanel(){
 		b1 = new JButton("Instructions"); 
-		b2 = new JButton("Play"); 
+		b2 = new JButton("Go Shopping"); 
 		b3 = new JButton("Exit"); 
 		
 		this.setLayout(new FlowLayout());

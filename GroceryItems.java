@@ -7,9 +7,10 @@ import java.awt.image.*;
 
 class GroceryItems{
 	//Declaring variables
-	private int identity,x,y; 
+	private int identity,x,y,width,height; 
 	private String[] imagesOfItems = {"images\\egg.PNG", "images\\milk.PNG","images\\strawberry.PNG","images\\bread.PNG","images\\flour.PNG","images\\sugar.PNG"};
 	private BufferedImage image1, image2,image3,image4,image5,image6;
+	private boolean visible;
 	
 	//Methods
 	public GroceryItems(){
@@ -30,6 +31,10 @@ class GroceryItems{
         }catch(IOException e) {
             e.printStackTrace();
         }
+		
+		width = 70;
+		height = 84; 
+		visible = true;
 	}
 	
 	public int getIdentity(){
@@ -57,5 +62,16 @@ class GroceryItems{
 		}
     }	   
 	
+	public Rectangle getBounds() {
+		return new Rectangle(x, y, width, height);
+	}
+	
+	public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
 	
 }

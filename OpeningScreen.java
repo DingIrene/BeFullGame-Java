@@ -3,35 +3,26 @@ import java.awt.Font;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.*; 
+import java.awt.event.*; 
 
 //How to add custom font with its own ttf file
 //How to create timer for this panel to show for a few seconds at the start of the game
 
-class OpeningScreen extends JPanel{
+class OpeningScreen extends JPanel implements ActionListener{
 	private JLabel title; 
+	private JButton start; 
 	
 	public OpeningScreen(){
 		this.setLayout(new BorderLayout());
 		title = new JLabel("Stuffed"); 
 		this.add(title);
-		/*
-		try {
+		start = new JButton("Start"); 
+		this.add(start); 
 		
-            Font font = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream("font\\3D.ttf"));
-            title = new JLabel("Stuffed");
-			//GraphicsEnvironment genv = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			//genv.registerFont(font);
-            //title.setFont(font.deriveFont(Font.BOLD, 48f));
-            add(title);
-        } catch (FontFormatException | IOException ex) {
-            ex.printStackTrace();
-        }
-		*/
 	}
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		  
 	}
 	
 	public void paint(Graphics g){
@@ -40,5 +31,10 @@ class OpeningScreen extends JPanel{
 		g.drawString("Stuffed" ,100,490);
 	}
 	
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()== start){
+			BeFullMain.cards.next(BeFullMain.cont);
+		}
+	}
 	
 }
