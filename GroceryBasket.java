@@ -12,7 +12,7 @@ Cart object
 
 class GroceryBasket{
 	//Declaring variables
-	private int y,x,vel = 0, height, width;
+	private int y,x,vel = 0, width, height;
 	private BufferedImage image;
 
 	public GroceryBasket(int x, int y){ //constructor
@@ -20,11 +20,11 @@ class GroceryBasket{
 		this.y=y;
         try {
             image = ImageIO.read(new File("images\\groceryCart.png"));
+			width = image.getWidth();
+			height = image.getHeight();
         } catch (IOException e) {
             e.printStackTrace();
         }
-		height = 212;
-		width = 712; 
 	}
   
 	public void myDraw(Graphics g){
@@ -52,6 +52,17 @@ class GroceryBasket{
 		return x; 
 	}
 	
+	public int getY(){
+		return y;
+	}
+	
+	public int getWidth(){
+		return width;
+	}
+	
+	public int getHeight(){
+		return height;
+	}
 
 	public void boundaryLeft(){
 		x = 50; 
@@ -59,9 +70,5 @@ class GroceryBasket{
 	
 	public void boundaryRight(){
 		x = 780; 
-	}
-	
-	public Rectangle getBounds() {
-		return new Rectangle(x, y, width, height);
 	}
 }
