@@ -8,24 +8,18 @@ import java.awt.event.*;
 class BeFullMain extends JFrame{
 	static CardLayout cards;
 	static Container cont; 
-
-	MainMenuPanel mainScreen; 
-	GroceryGame game; 
-	OpeningScreen first;
 	
 	public BeFullMain(){
 		cont = getContentPane();
 		cards=new CardLayout();
 		cont.setLayout(cards); 
 		
+		
 		// create an object of our game panel
-		//first = new OpeningScreen(); 
-		mainScreen = new MainMenuPanel();
-		game = new GroceryGame();
-		cont.add(game, BorderLayout.CENTER);
+		MainMenuPanel mainScreen = new MainMenuPanel();
+		GroceryGame game = new GroceryGame();
 			
-			// add this game panel to the center of the frame
-		//cont.add(first, BorderLayout.CENTER);
+			// add this game panel to the center of the frame 
 		cont.add(mainScreen, BorderLayout.CENTER);
 		cont.add(game, BorderLayout.CENTER);
 			
@@ -45,4 +39,3 @@ class BeFullMain extends JFrame{
 
 	}
 }
-

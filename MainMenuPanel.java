@@ -3,22 +3,31 @@ import javax.swing.*;
 import java.awt.event.*; 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.imageio.*;
+import java.util.*;
+import java.io.*;
 
 //Need to import the instructions image that will be in the popup of the instructions button
+//Nedd to make the cart as an object that can be movable
+//Need to re-make the layout so that the health bar is at the south, bottom of the panel
 
 class MainMenuPanel extends JPanel implements ActionListener{
 	//Declaring variables
 	private JButton b1,b2,b3; 
-	private static ImageIcon instructions; 
-		
+	private ImageIcon instructions; 
+	private JLabel background, healthBar;
+	
 	public MainMenuPanel(){
 		b1 = new JButton("Instructions"); 
-		b2 = new JButton("Go Shopping"); 
+		b2 = new JButton("Play"); 
 		b3 = new JButton("Exit"); 
+		 
+		JLabel background = new JLabel(new ImageIcon("images/Kitchen.PNG"));
+		JLabel healthBar = new JLabel(new ImageIcon("images/bar.PNG"));
+		//this.setLayout(new BorderLayout());
 		
-		this.setLayout(new FlowLayout());
-		
+		this.add(background); 
+		//this.add(healthBar,BorderLayout.SOUTH);
 		this.add(b1);
 		this.add(b2);  
 		this.add(b3);
@@ -26,10 +35,11 @@ class MainMenuPanel extends JPanel implements ActionListener{
 		b1.addActionListener(this);
 		b2.addActionListener(this);
 		b3.addActionListener(this);
+		b1.setContentAreaFilled(false);
+		b2.setContentAreaFilled(false);
+		b3.setContentAreaFilled(false);
 		
 		//instructions= new ImageIcon("InstructionsPoints.PNG"); png of the instructions
-		
-		
 	}
 	
 	public void actionPerformed(ActionEvent e) {
@@ -46,7 +56,6 @@ class MainMenuPanel extends JPanel implements ActionListener{
 			System.exit(0);
 		}	
     }
-
 	
 	public void paintComponent(Graphics g){
 	   super.paintComponent(g);

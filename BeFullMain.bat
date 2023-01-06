@@ -1,4 +1,4 @@
-javac BeFullMain.java 
+javac *java
 pause 
 java BeFullMain
-pause 
+pause
