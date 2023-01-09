@@ -33,7 +33,7 @@ class BeFullMain extends JFrame{
 	
 	public static void main(String[] args){
 		BeFullMain main1 = new BeFullMain();
-		main1.setSize(1000, 700);
+		main1.setSize(1000, 650);
 		main1.setVisible(true);
 		main1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // make frame closed when x button is pressed
 

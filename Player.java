@@ -18,6 +18,14 @@ public class Player{
 		return isGreen; 
 	}
 	
+	public boolean isFull(){
+		if(xp >= 100){
+			return true; 
+		}
+		else{
+			return false; 
+		}
+	}
 	/*
 	public void DrawBar(Graphics g){
 		

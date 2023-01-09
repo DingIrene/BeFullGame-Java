@@ -7,8 +7,6 @@ import javax.imageio.*;
 import java.util.*;
 import java.io.*;
 
-//Need to import the instructions image that will be in the popup of the instructions button
-//Nedd to make the cart as an object that can be movable
 //Need to re-make the layout so that the health bar is at the south, bottom of the panel
 
 class MainMenuPanel extends JPanel implements ActionListener{
@@ -23,14 +21,14 @@ class MainMenuPanel extends JPanel implements ActionListener{
 		b3 = new JButton("Exit"); 
 		 
 		JLabel background = new JLabel(new ImageIcon("images/Kitchen.PNG"));
-		JLabel healthBar = new JLabel(new ImageIcon("images/bar.PNG"));
+		JLabel healthBar = new JLabel(new ImageIcon("images/Bar.PNG"));
 		//this.setLayout(new BorderLayout());
-		
-		this.add(background); 
-		//this.add(healthBar,BorderLayout.SOUTH);
+
 		this.add(b1);
 		this.add(b2);  
 		this.add(b3);
+		this.add(background); 
+		this.add(healthBar, BorderLayout.SOUTH);
 	  
 		b1.addActionListener(this);
 		b2.addActionListener(this);
@@ -44,7 +42,6 @@ class MainMenuPanel extends JPanel implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==b1){
-			this.setBackground(Color.pink); 
 			//Pop up window of the instructions
 			JOptionPane.showMessageDialog(null,"","Instructions", JOptionPane.INFORMATION_MESSAGE,instructions);
 		}	
