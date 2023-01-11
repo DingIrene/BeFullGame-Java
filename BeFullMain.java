@@ -11,16 +11,18 @@ class BeFullMain extends JFrame{
 	
 	public BeFullMain(){
 		cont = getContentPane();
-		cards=new CardLayout();
-		cont.setLayout(cards); 
+		cards = new CardLayout();
+		cont.setLayout(cards);
 		
 		
 		// create an object of our game panel
 		MainMenuPanel mainScreen = new MainMenuPanel();
 		GroceryGame game = new GroceryGame();
+		Map map1 = new Map(); 
 			
 			// add this game panel to the center of the frame 
 		cont.add(mainScreen, BorderLayout.CENTER);
+		cont.add(map1, BorderLayout.CENTER);
 		cont.add(game, BorderLayout.CENTER);
 			
 		/*
@@ -35,6 +37,7 @@ class BeFullMain extends JFrame{
 		BeFullMain main1 = new BeFullMain();
 		main1.setSize(1000, 650);
 		main1.setVisible(true);
+		main1.setResizable(false);
 		main1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // make frame closed when x button is pressed
 
 	}

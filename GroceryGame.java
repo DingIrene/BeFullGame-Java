@@ -20,18 +20,18 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 	
 	public GroceryGame(){ //constructor
 		ImageIcon obj = new ImageIcon("images/groceryStore.JPG"); 
-		pic = obj.getImage(); 
-	
+		pic = obj.getImage();
 		for(int i = 0; i < 12; i++){
-			items[i] = new GroceryItems(); 
-			
+			items[i] = new GroceryItems();
 		}
+		
 		this.setLayout(new BorderLayout()); 
 		start = new JButton("Start");
 		back = new JButton("Back");
 		this.add(back, BorderLayout.NORTH); 
 		this.add(start, BorderLayout.SOUTH);
 	    start.addActionListener(this);
+		back.addActionListener(this);
 		
 		//Printing out the shopping cart
 		t= new Timer(120,this);
@@ -51,7 +51,7 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 		if(isReady == true){
 			for(int i = 0; i < 12; i++){
 				items[i].move();
-				items[i].myDraw(g); 
+				items[i].myDraw(g);
 			}
 		}
 	}
@@ -61,11 +61,11 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 		if(e.getSource() == start){
 			isReady = true;
 		}
-		/* Implement when there is actually a Map panel
+		// Implement when there is actually a Map panel
 		if(e.getSource() == back){
-			BeFullMain.cards.next(BeFullMain.cont);
+			BeFullMain.cards.previous(BeFullMain.cont);
 		}
-		*/
+
 		//repositioning if cart is out of boundaries
 		if(a1.getX() <= 10){
 			a1.boundaryLeft();

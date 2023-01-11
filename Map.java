@@ -6,17 +6,68 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Map implements ActionListener{
+public class Map extends JPanel implements ActionListener{
 	//Declaring variables
 	private Image pic; 
+	private JButton b1, b2, b3, b4, b5;
 	
 	public Map(){
-		// (Should be the picture of the map) ImageIcon obj = new ImageIcon("images/Kitchen.PNG");  
+		ImageIcon obj = new ImageIcon("images/map.PNG");  
 		pic = obj.getImage();
+		
+		this.setLayout(null);
+		
+		b1 = new JButton("");
+		b1.setBounds(80, 120, 185, 90);
+		this.add(b1);
+		b1.addActionListener(this);
+		b1.setContentAreaFilled(false);
+		
+		b2 = new JButton("");
+		b2.setBounds(590, 70, 90, 90);
+		this.add(b2);
+		b2.addActionListener(this);
+		b2.setContentAreaFilled(false);
+		
+		b3 = new JButton("");
+		b3.setBounds(70, 380, 200, 100);
+		this.add(b3);
+		b3.addActionListener(this);
+		b3.setContentAreaFilled(false);
+		
+		b4 = new JButton("");
+		b4.setBounds(530, 320, 90, 80);
+		this.add(b4);
+		b4.addActionListener(this);
+		b4.setContentAreaFilled(false);
+		
+		b5 = new JButton("");
+		b5.setBounds(870, 270, 90, 130);
+		this.add(b5);
+		b5.addActionListener(this);
+		b5.setContentAreaFilled(false);
 	}
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.drawImage(pic, 0, 0, null);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == b1){
+			BeFullMain.cards.next(BeFullMain.cont);
+		}
+		else if(e.getSource() == b2){
+			JOptionPane.showMessageDialog(null,"Uh oh! You are too hungry to go to school :( Fill up before heading to class!","School", JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if(e.getSource() == b3){
+			JOptionPane.showMessageDialog(null,"You start heading to the park but suddenly your stomach grumbles really loud... how embarrassing! Maybe you should eat something first.","Park", JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if(e.getSource() == b4){
+			JOptionPane.showMessageDialog(null,"Uh oh! You are too weak for the gym, how about some protein? >:)","Gym", JOptionPane.INFORMATION_MESSAGE);
+		}
+		else if(e.getSource() == b5){
+			//switch to kitchen cooking panel
+		}
 	}
 }

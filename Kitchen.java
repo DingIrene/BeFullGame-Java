@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-class Kitchen extends JPanel implements ActionListener{
+class Kitchen extends JPanel{
 	//Declaring variables
 	private Image pic; 
 	
