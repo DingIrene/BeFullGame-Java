@@ -16,14 +16,15 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 	private GroceryItems items[] = new GroceryItems[12];
 	private JButton start, back; 
 	private boolean isReady = false;
-	private Image pic; 
+	private Image pic;
+	private int temp = 0;
 	
 	public GroceryGame(){ //constructor
 		ImageIcon obj = new ImageIcon("images/groceryStore.JPG"); 
 		pic = obj.getImage();
-		for(int i = 0; i < 12; i++){
+		/*for(int i = 0; i < 12; i++){
 			items[i] = new GroceryItems();
-		}
+		}*/
 		
 		this.setLayout(new BorderLayout()); 
 		start = new JButton("Start");
@@ -35,7 +36,7 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 		
 		//Printing out the shopping cart
 		t= new Timer(120,this);
-		t.start();
+		//t.start();
 		a1 = new GroceryBasket(0,450); 
 		this.addKeyListener(this);
 		setFocusable(true);
@@ -50,7 +51,6 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 		a1.myDraw(g);
 		if(isReady == true){
 			for(int i = 0; i < 12; i++){
-				items[i].move();
 				items[i].myDraw(g);
 			}
 		}
@@ -59,9 +59,13 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 	public void actionPerformed(ActionEvent e) {
 		//When start button is pressed 
 		if(e.getSource() == start){
+			t.start();
 			isReady = true;
+			for(int i = 0; i < 12; i++){
+				items[i] = new GroceryItems();
+			}
+			
 		}
-		// Implement when there is actually a Map panel
 		if(e.getSource() == back){
 			BeFullMain.cards.previous(BeFullMain.cont);
 		}
@@ -76,7 +80,31 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 			repaint();
 			checkCollisions();
 		}
+		
+		if(e.getSource() == t){
+			for(int i = 0; i < 12; i++){
+				items[i].move();
+				if(allItemsGone()){
+					t.stop();
+				}
+			}
+		}
     }
+	
+	public boolean allItemsGone(){
+		temp = 0;
+		for(int i = 0; i < 12; i++){
+			if(items[i].fallHeight() >= 680){
+				temp += 1;
+			}
+		}
+		if(temp == 12){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 	
 	public void checkCollisions(){
 		Rectangle test = new Rectangle(a1.getX(), a1.getY(), a1.getWidth(), a1.getHeight());

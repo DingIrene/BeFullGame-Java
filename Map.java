@@ -22,30 +22,35 @@ public class Map extends JPanel implements ActionListener{
 		this.add(b1);
 		b1.addActionListener(this);
 		b1.setContentAreaFilled(false);
+		b1.setBorderPainted(false);
 		
 		b2 = new JButton("");
-		b2.setBounds(590, 70, 90, 90);
+		b2.setBounds(587, 65, 90, 90);
 		this.add(b2);
 		b2.addActionListener(this);
 		b2.setContentAreaFilled(false);
+		b2.setBorderPainted(false);
 		
 		b3 = new JButton("");
 		b3.setBounds(70, 380, 200, 100);
 		this.add(b3);
 		b3.addActionListener(this);
 		b3.setContentAreaFilled(false);
+		b3.setBorderPainted(false);
 		
 		b4 = new JButton("");
 		b4.setBounds(530, 320, 90, 80);
 		this.add(b4);
 		b4.addActionListener(this);
 		b4.setContentAreaFilled(false);
+		b4.setBorderPainted(false);
 		
 		b5 = new JButton("");
 		b5.setBounds(870, 270, 90, 130);
 		this.add(b5);
 		b5.addActionListener(this);
 		b5.setContentAreaFilled(false);
+		b5.setBorderPainted(false);
 	}
 
 	public void paintComponent(Graphics g) {
@@ -67,7 +72,7 @@ public class Map extends JPanel implements ActionListener{
 			JOptionPane.showMessageDialog(null,"Uh oh! You are too weak for the gym, how about some protein? >:)","Gym", JOptionPane.INFORMATION_MESSAGE);
 		}
 		else if(e.getSource() == b5){
-			//switch to kitchen cooking panel
+			BeFullMain.cards.last(BeFullMain.cont);
 		}
 	}
 }

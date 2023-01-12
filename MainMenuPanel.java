@@ -20,15 +20,15 @@ class MainMenuPanel extends JPanel implements ActionListener{
 		b2 = new JButton("Play"); 
 		b3 = new JButton("Exit"); 
 		 
-		JLabel background = new JLabel(new ImageIcon("images/Kitchen.PNG"));
-		JLabel healthBar = new JLabel(new ImageIcon("images/Bar.PNG"));
+		JLabel background = new JLabel(new ImageIcon("images/TitleScreen.jpg"));
+		//JLabel healthBar = new JLabel(new ImageIcon("images/Bar.PNG"));
 		//this.setLayout(new BorderLayout());
 
 		this.add(b1);
 		this.add(b2);  
 		this.add(b3);
 		this.add(background); 
-		this.add(healthBar, BorderLayout.SOUTH);
+		//this.add(healthBar, BorderLayout.SOUTH);
 	  
 		b1.addActionListener(this);
 		b2.addActionListener(this);

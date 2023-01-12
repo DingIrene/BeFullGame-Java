@@ -19,11 +19,13 @@ class BeFullMain extends JFrame{
 		MainMenuPanel mainScreen = new MainMenuPanel();
 		GroceryGame game = new GroceryGame();
 		Map map1 = new Map(); 
-			
+		Kitchen kitchen1 = new Kitchen(); 
+		
 			// add this game panel to the center of the frame 
 		cont.add(mainScreen, BorderLayout.CENTER);
 		cont.add(map1, BorderLayout.CENTER);
 		cont.add(game, BorderLayout.CENTER);
+		cont.add(kitchen1, BorderLayout.CENTER);
 			
 		/*
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // make frame closed when x button is pressed

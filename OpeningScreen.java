@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.swing.*; 
 import java.awt.event.*; 
 
-//How to add custom font with its own ttf file
 //How to create timer for this panel to show for a few seconds at the start of the game
 
 class OpeningScreen extends JPanel implements ActionListener{
