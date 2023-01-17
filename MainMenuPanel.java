@@ -1,3 +1,10 @@
+/*
+Name: Irene D & Janice H
+Date: January 18, 2023
+Teacher: Ms. Strelkovska
+Description: Main Menu Panel
+*/
+
 import java.awt.*; 
 import javax.swing.*; 
 import java.awt.event.*; 

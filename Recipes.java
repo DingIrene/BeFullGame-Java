@@ -8,19 +8,22 @@ import java.awt.image.*;
 Will randomize the recipes to use in a deck of recipes 
 */
 
+//How/what will i return to the kitchen class
+
 public class Recipes{
 	//Declaring variables
-	private String[] imagesOfMeals = {}; 
-	private BufferedImage meal1, meal2, meal3; 
+	private static String[] imagesOfMeals = {"images/mealSmoothie.PNG","images/mealToast.PNG", "images/mealCake.PNG", "images/mealRoll.PNG","images/mealPancake.PNG", "images/mealDonut.PNG"}; 
+	private String[] randomMeals;  
 	
 	public Recipes(){
 		for(int i = 0; i < 3; i ++){
-			int random = (int)((Math.random()*imagesOfItems.length)+1);
-			try {
-				image[i+1] = ImageIO.read(new File());
-			}catch(IOException e) {
-				e.printStackTrace();
-			}
+			int random = (int)((Math.random()*imagesOfMeals.length)+1);
+			randomMeals[i+1] = imagesOfMeals[random]; 
 		}
+	} 
+	
+	public String icon(int number){
+		String mealID = randomMeals[number];
+		return mealID; 	 
 	}
 }

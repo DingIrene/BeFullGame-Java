@@ -1,3 +1,10 @@
+/*
+Name: Irene D & Janice H
+Date: January 18, 2023
+Teacher: Ms. Strelkovska
+Description: 
+*/
+
 import java.util.*;
 import java.io.*;
 import javax.imageio.*;

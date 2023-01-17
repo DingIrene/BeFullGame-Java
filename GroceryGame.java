@@ -1,3 +1,10 @@
+/*
+Name: Irene D & Janice H
+Date: January 18, 2023
+Teacher: Ms. Strelkovska
+Description: Grocery Game Class
+*/
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -14,10 +21,12 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
     private Timer t; 
 	private GroceryBasket a1; 
 	private GroceryItems items[] = new GroceryItems[12];
-	private JButton start, back; 
+	private JButton start, back, fridge; 
 	private boolean isReady = false;
 	private Image pic;
 	private int temp = 0;
+	private int[] itemIDs; 
+	private Fridge frigo;
 	
 	public GroceryGame(){ //constructor
 		ImageIcon obj = new ImageIcon("images/groceryStore.JPG"); 
@@ -26,17 +35,21 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 			items[i] = new GroceryItems();
 		}*/
 		
+		frigo = new Fridge(); 
+		
 		this.setLayout(new BorderLayout()); 
 		start = new JButton("Start");
 		back = new JButton("Back");
+		fridge = new JButton("Fridge"); 
 		this.add(back, BorderLayout.NORTH); 
 		this.add(start, BorderLayout.SOUTH);
+		this.add(fridge, BorderLayout.EAST);
 	    start.addActionListener(this);
 		back.addActionListener(this);
+		fridge.addActionListener(this); 
 		
 		//Printing out the shopping cart
 		t= new Timer(120,this);
-		//t.start();
 		a1 = new GroceryBasket(0,450); 
 		this.addKeyListener(this);
 		setFocusable(true);
@@ -64,10 +77,12 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 			for(int i = 0; i < 12; i++){
 				items[i] = new GroceryItems();
 			}
-			
 		}
 		if(e.getSource() == back){
 			BeFullMain.cards.previous(BeFullMain.cont);
+		}
+		if(e.getSource() == fridge){
+			JOptionPane.showMessageDialog(null,frigo,"Collected", JOptionPane.INFORMATION_MESSAGE);
 		}
 
 		//repositioning if cart is out of boundaries
@@ -114,7 +129,7 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 			
 			if(list[i].intersects(test)){
                 items[i].setVisible(false);
-				//numberOfItems[items[i].getIdentity()] += 1; //how to transport to fridge
+				frigo.addToFridge(items[i].getIdentity());
             }
         }
 	}

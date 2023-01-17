@@ -1,25 +1,41 @@
+/*
+Name: Irene D & Janice H
+Date: January 18, 2023
+Teacher: Ms. Strelkovska
+Description: Grocery items file
+*/
+
 import java.util.*;
 import java.io.*;
 import javax.imageio.*;
 import java.awt.*;
 import java.awt.image.*;
 //Each grocery item will be idenitifed by a number 
+//Should I have the grocery game componements be set instead of automatically having them be contructed? 
 
 class GroceryItems{
 	//Declaring variables
-	private int identity,x,y; 
+	private int identity,x,y, random; 
 	private String[] imagesOfItems = {"images/egg.PNG", "images/milk.PNG","images/strawberry.PNG","images/bread.PNG","images/flour.PNG","images/sugar.PNG"};
+	private int[] identities = new int[]{0,1,2,3,4,5}; 
 	private BufferedImage image;
 	private boolean visible = true;
 	
 	//Methods
 	public GroceryItems(){
-		//Randmizing the starting positions
-		identity = (int)((Math.random()*imagesOfItems.length)+1);
+		//Randmizing the item and the starting positions
+		random = (int)((Math.random()*imagesOfItems.length));
+		 
+		for(int i = 0; i < 6; i++){ //Initizing the identity of the item
+			if(random == identities[i]){
+				identity = i; 
+				break;
+			}
+		}
 		y = -((int)(((Math.random()*3000) + 50)));
 		x = (int)(((Math.random()*8)+1)*90);
 		try {
-			image = ImageIO.read(new File(imagesOfItems[identity - 1]));
+			image = ImageIO.read(new File(imagesOfItems[random]));
         }catch(IOException e) {
             e.printStackTrace();
         }
@@ -64,4 +80,8 @@ class GroceryItems{
 		}
 		g.drawImage(image, x, y, null);
     }
+	
+	public String getImage(int number){
+		return imagesOfItems[number]; 
+	}
 }

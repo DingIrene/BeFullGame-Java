@@ -1,3 +1,10 @@
+/*
+Name: Irene D & Janice H
+Date: January 18, 2023
+Teacher: Ms. Strelkovska
+Description: Opening Screen class
+*/
+
 import java.awt.*; 
 import java.awt.Font;
 import java.io.File;
