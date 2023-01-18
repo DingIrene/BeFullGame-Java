@@ -20,6 +20,7 @@ class GroceryItems{
 	private int[] identities = new int[]{0,1,2,3,4,5}; 
 	private BufferedImage image;
 	private boolean visible = true;
+	private boolean caught = false;
 	
 	//Methods
 	public GroceryItems(){
@@ -43,6 +44,14 @@ class GroceryItems{
 	
 	public boolean isVisible(){
 		return visible;
+	}
+	
+	public void isCaught(boolean caught){
+		this.caught = caught;
+	}
+	
+	public boolean caughtc(){
+		return caught;
 	}
 	
 	public void setVisible(boolean visible){

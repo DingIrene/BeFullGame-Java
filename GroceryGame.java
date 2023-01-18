@@ -101,9 +101,15 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 				items[i].move();
 				if(allItemsGone()){
 					t.stop();
+					if(items[i].caughtc() == true){
+						frigo.addToFridge(items[i].getIdentity());
+					}
 				}
 			}
 		}
+		/*if(allItemsGone()){
+			t.stop();
+		}*/
     }
 	
 	public boolean allItemsGone(){
@@ -129,7 +135,8 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 			
 			if(list[i].intersects(test)){
                 items[i].setVisible(false);
-				frigo.addToFridge(items[i].getIdentity());
+				items[i].isCaught(true);
+				//frigo.addToFridge(items[i].getIdentity());
             }
         }
 	}
