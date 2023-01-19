@@ -17,7 +17,7 @@ public class HealthBar{
 	private String[] imagesOfItems = {"images/notFull.PNG", "images/full.PNG"}; 
 	private BufferedImage image1, image2;
 	
-	public HealthBar(){
+	public HealthBar(){ 
 		xp = 0; 
 		isFull = false; 
 		try {
@@ -30,6 +30,7 @@ public class HealthBar{
 	
 	public void addXP(int add){
 		xp += add; 
+		System.out.println("Xp: "+ xp); 
 	}
 	
 	public boolean isFull(){
@@ -38,26 +39,20 @@ public class HealthBar{
 		}
 		return isFull; 
 	}
-	
-	public boolean isColored(){
-		if(xp >= 25){
-			return true; 
-		}
-		else{
-			return false; 
-		}
-	}
-	
+
 	public void myDraw(Graphics g){
-		for(int i = 0; i < 4; i++){
-			if(xp >= 100 - (25*(4-1))){
-				g.drawImage(image2, 0, 35 + (i*30), null);
+		for(int i = 1; i < 5; i++){
+			if(xp >= 100 - (25*(4-i))){
+				g.drawImage(image2, 0, 10+ (i*30), null);
 			}else{
-				g.drawImage(image1, 0, 35 + (i*30), null);
+				g.drawImage(image1, 0,10 +  (i*30), null);
 			}
 		}
-		g.drawString("Full: " + ""+(xp/100) + "%",0, 25);
-		
+		if(xp >= 100){
+			g.drawString("Full: " + ""+100 + "%",0, 40);
+		}else{
+			g.drawString("Full: " + ""+xp + "%",0, 40);
+		}
     }
 
 }
