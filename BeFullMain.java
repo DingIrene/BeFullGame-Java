@@ -15,11 +15,13 @@ import java.awt.event.*;
 class BeFullMain extends JFrame{
 	static CardLayout cards;
 	static Container cont; 
+	//public static Fridge frigo = new Fridge();
 	
 	public BeFullMain(){
 		cont = getContentPane();
 		cards = new CardLayout();
 		cont.setLayout(cards);
+		
 		
 		
 		// create an object of our game panel

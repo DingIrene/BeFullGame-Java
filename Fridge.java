@@ -37,11 +37,15 @@ class Fridge extends JPanel implements ActionListener{
 	}
 	
 	public void addToFridge(int identity){
-		System.out.println("Idenity = "+ storage.get(identity));
 		int temp  = (storage.get(identity)) +1;
 		System.out.println("New amount is: "+temp);
 		
         storage.set(identity, temp);
+	}
+	
+	public void removeFrom(int identity, int num){
+		int temp = (storage.get(identity)) - num;
+		storage.set(identity, temp);
 	}
 	
 	public int getNumberOfItem(int identity){ 
@@ -60,4 +64,5 @@ class Fridge extends JPanel implements ActionListener{
 			}
 		}
 	}
+	
 }

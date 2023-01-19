@@ -1,14 +1,16 @@
+/*
+Name: Irene D & Janice H
+Date: January 18, 2023
+Teacher: Ms. Strelkovska
+Description: Recipe deck class where description and needed ingredients for each class in 
+here. 
+*/
+
 import java.util.*;
 import java.io.*;
 import javax.imageio.*;
 import java.awt.*;
 import java.awt.image.*;
-
-/*
-Will randomize the recipes to use in a deck of recipes 
-*/
-
-//How/what will i return to the kitchen class
 
 public class Recipes{
 	//Declaring variables
@@ -26,4 +28,6 @@ public class Recipes{
 		String mealID = randomMeals[number];
 		return mealID; 	 
 	}
+	
+	
 }

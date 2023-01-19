@@ -5,6 +5,9 @@ Teacher: Ms. Strelkovska
 Description: Grocery Game Class
 */
 
+/*
+Is caught is not working properly 
+*/
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -12,6 +15,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+
 
 //Buttons right now are taking up too much space need to rearrange 
 
@@ -26,9 +31,12 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 	private Image pic;
 	private int temp = 0;
 	private int[] itemIDs; 
-	private Fridge frigo;
+	public static Fridge frigo;
 	
-	public GroceryGame(){ //constructor
+	//public GroceryGame(Fridge frigo){ //constructor
+	public GroceryGame(){
+		//put in the main frame: 
+		//this.frigo = frigo;
 		ImageIcon obj = new ImageIcon("images/groceryStore.JPG"); 
 		pic = obj.getImage();
 		/*for(int i = 0; i < 12; i++){
@@ -107,9 +115,6 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 				}
 			}
 		}
-		/*if(allItemsGone()){
-			t.stop();
-		}*/
     }
 	
 	public boolean allItemsGone(){
@@ -135,8 +140,9 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 			
 			if(list[i].intersects(test)){
                 items[i].setVisible(false);
-				items[i].isCaught(true);
-				//frigo.addToFridge(items[i].getIdentity());
+				if(items[i].isVisible() == false){
+					items[i].isCaught(true);
+				}
             }
         }
 	}

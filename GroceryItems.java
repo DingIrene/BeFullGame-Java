@@ -42,16 +42,16 @@ class GroceryItems{
         }
 	}
 	
-	public boolean isVisible(){
-		return visible;
-	}
-	
 	public void isCaught(boolean caught){
 		this.caught = caught;
 	}
 	
 	public boolean caughtc(){
 		return caught;
+	}
+	
+	public boolean isVisible(){
+		return visible;
 	}
 	
 	public void setVisible(boolean visible){
