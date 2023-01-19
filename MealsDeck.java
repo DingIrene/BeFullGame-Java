@@ -86,7 +86,7 @@ public class MealsDeck extends JPanel implements ActionListener{
 				cooking();
 				bar.addXP(cake[6]);
 				for(int i = 0; i < 6; i++){
-					GroceryGame.frigo.removeFrom(i, roll[i]);
+					GroceryGame.frigo.removeFrom(i, cake[i]);
 				}
 			}
 			checker = 0;
@@ -112,7 +112,7 @@ public class MealsDeck extends JPanel implements ActionListener{
 				cooking();
 				bar.addXP(smoothie[6]);
 				for(int i = 0; i < 6; i++){
-					GroceryGame.frigo.removeFrom(i, roll[i]);
+					GroceryGame.frigo.removeFrom(i, smoothie[i]);
 				}
 			}
 			checker = 0;
