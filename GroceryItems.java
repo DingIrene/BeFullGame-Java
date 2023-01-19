@@ -11,7 +11,7 @@ import javax.imageio.*;
 import java.awt.*;
 import java.awt.image.*;
 //Each grocery item will be idenitifed by a number 
-//Should I have the grocery game componements be set instead of automatically having them be contructed? 
+
 
 class GroceryItems{
 	//Declaring variables
@@ -23,7 +23,7 @@ class GroceryItems{
 	private boolean caught = false;
 	
 	//Methods
-	public GroceryItems(){
+	public GroceryItems(){ //constructor
 		//Randmizing the item and the starting positions
 		random = (int)((Math.random()*imagesOfItems.length));
 		 

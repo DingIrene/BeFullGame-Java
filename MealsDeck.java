@@ -15,7 +15,6 @@ public class MealsDeck extends JPanel implements ActionListener{
 	private ImageIcon[] meals=new ImageIcon[3];;
 	private String[] mealString = {"images/mealCake.PNG","images/mealSmoothie.PNG","images/mealRoll.PNG"};
 	private JButton b1, b2,b3, b4, fridge; 
-	//private boolean enough = false;
 	private int[] cake =  new int[]{0,1,2,1,2,1,7};
 	private int[] smoothie =  new int[]{0,2,3,0,0,1,6};
 	private int[] roll = new int[]{1,2,3,2,1,0,9};
@@ -27,9 +26,9 @@ public class MealsDeck extends JPanel implements ActionListener{
 		this.add(pane);
 		GridLayout grid1;
 		grid1 = new GridLayout(1,3);
-		grid1.setHgap(50);
+		grid1.setHgap(30);
 		pane.setLayout(grid1); 
-		pane.setSize(700, 300);
+		pane.setSize(500, 300);
 		this.setOpaque(false); 
 		pane.setOpaque(false);
 		
@@ -56,8 +55,6 @@ public class MealsDeck extends JPanel implements ActionListener{
 		pane.add(b2);
 		pane.add(b3);
 		
-		//Declaring the requirements needed to cook each meal 
-		
 	}
 	
 	public boolean check(int storageOfItem, int need){
@@ -82,11 +79,10 @@ public class MealsDeck extends JPanel implements ActionListener{
 			else{
 				cooking();
 				bar.addXP(cake[6]);
-				bar.isFull();
-				bar.isColored();
 				for(int i = 0; i < 6; i++){
 					GroceryGame.frigo.removeFrom(i, cake[i]);
 				}
+				
 			}
 			checker = 0;
 		}
@@ -103,8 +99,6 @@ public class MealsDeck extends JPanel implements ActionListener{
 			else{
 				cooking();
 				bar.addXP(smoothie[6]);
-				bar.isFull();
-				bar.isColored();
 				for(int i = 0; i < 6; i++){
 					GroceryGame.frigo.removeFrom(i, smoothie[i]);
 				}
@@ -124,14 +118,17 @@ public class MealsDeck extends JPanel implements ActionListener{
 			else{
 				cooking();
 				bar.addXP(roll[6]);
-				bar.isFull();
-				bar.isColored();
 				for(int i = 0; i < 6; i++){
 					GroceryGame.frigo.removeFrom(i, roll[i]);
 				}
 			}
 			checker = 0;
+			
+		}if(bar.isFull()){
+			JOptionPane.showMessageDialog(null,"Thanks for playing!","Your full >:)", JOptionPane.INFORMATION_MESSAGE);
+			BeFullMain.cards.first(BeFullMain.cont);		
 		}
+		
 	}
 	
 	public void cooking(){

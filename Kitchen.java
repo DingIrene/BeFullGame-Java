@@ -19,18 +19,13 @@ class Kitchen extends JPanel implements ActionListener{
 	private Image pic; 
 	private JButton b4, fridge;
 	private int clickCount = 0; 
-	//private Icon locked = new ImageIcon("white.PNG"); 
 	private HealthBar xpBar;
 	private MealsDeck deck; 
 	
-	//public Kitchen(Fridge frigo){
-	public Kitchen(){
+	public Kitchen(){ //constructor
 		this.setLayout(new BorderLayout()); 
 		ImageIcon obj = new ImageIcon("images/Kitchen.PNG"); 
 		pic = obj.getImage();
-		
-		//frigo = new Fridge(); 
-		//Declaring objects
 		deck = new MealsDeck(); 
 
 		fridge = new JButton("Fridge");
@@ -48,6 +43,7 @@ class Kitchen extends JPanel implements ActionListener{
 		super.paintComponent(g);
 		g.drawImage(pic, 0, 0, null);
 		MealsDeck.bar.myDraw(g);
+		repaint();
 		
 	}
 	

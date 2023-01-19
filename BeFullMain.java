@@ -9,20 +9,14 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-
-//Problem with the grocery cart image not printing on the GroceryGame panel
-
 class BeFullMain extends JFrame{
 	static CardLayout cards;
 	static Container cont; 
-	//public static Fridge frigo = new Fridge();
 	
 	public BeFullMain(){
 		cont = getContentPane();
 		cards = new CardLayout();
 		cont.setLayout(cards);
-		
-		
 		
 		// create an object of our game panel
 		MainMenuPanel mainScreen = new MainMenuPanel();
@@ -30,18 +24,14 @@ class BeFullMain extends JFrame{
 		Map map1 = new Map(); 
 		Kitchen kitchen1 = new Kitchen(); 
 		
-			// add this game panel to the center of the frame 
+		// add this game panel to the center of the frame 
 		cont.add(mainScreen, BorderLayout.CENTER);
 		cont.add(map1, BorderLayout.CENTER);
 		cont.add(game, BorderLayout.CENTER);
 		cont.add(kitchen1, BorderLayout.CENTER);
 			
-		/*
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // make frame closed when x button is pressed
-			//andrea was here
-		this.setVisible(true);     // make the frame visible
-		this.setSize(1000, 700);  // set the size of the frame. Maximum size: 1024 x 768 
-		*/
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // make frame closed 
+	
 	}
 	
 	public static void main(String[] args){

@@ -5,9 +5,6 @@ Teacher: Ms. Strelkovska
 Description: Grocery Game Class
 */
 
-/*
-Is caught is not working properly 
-*/
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -15,10 +12,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
-
-
-//Buttons right now are taking up too much space need to rearrange 
 
 class GroceryGame extends JPanel implements ActionListener, KeyListener  { 
 	//Declaring variables 
@@ -33,15 +26,9 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 	private int[] itemIDs; 
 	public static Fridge frigo;
 	
-	//public GroceryGame(Fridge frigo){ //constructor
-	public GroceryGame(){
-		//put in the main frame: 
-		//this.frigo = frigo;
-		ImageIcon obj = new ImageIcon("images/groceryStore.JPG"); 
+	public GroceryGame(){ //constructor
+		ImageIcon obj = new ImageIcon("images/groceryStore.PNG"); 
 		pic = obj.getImage();
-		/*for(int i = 0; i < 12; i++){
-			items[i] = new GroceryItems();
-		}*/
 		
 		frigo = new Fridge(); 
 		
@@ -55,6 +42,7 @@ class GroceryGame extends JPanel implements ActionListener, KeyListener  {
 	    start.addActionListener(this);
 		back.addActionListener(this);
 		fridge.addActionListener(this); 
+		fridge.setContentAreaFilled(false);
 		
 		//Printing out the shopping cart
 		t= new Timer(120,this);

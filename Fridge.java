@@ -13,8 +13,7 @@ import java.awt.event.ActionListener;
 class Fridge extends JPanel implements ActionListener{
 	//Declaring variables
 	private String name;
-	//Remember we are storing the number of items not the idenity of the item; the index number is the idenity
-	private ArrayList<Integer> storage = new ArrayList<Integer>();
+	private ArrayList<Integer> storage = new ArrayList<Integer>();	// storing the number of items not the idenity of the item; the index number is the idenity
 	private JButton[] button = new JButton[6];
 	private String[] icons = {"images/egg.PNG", "images/milk.PNG","images/strawberry.PNG","images/bread.PNG","images/flour.PNG","images/sugar.PNG"};
 	private int indentity; 

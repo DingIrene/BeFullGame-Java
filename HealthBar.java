@@ -12,12 +12,13 @@ import java.awt.*;
 import java.awt.image.*;
 
 public class HealthBar{
+	//Declaring variables
 	private int xp; 
 	private boolean isFull; 
 	private String[] imagesOfItems = {"images/notFull.PNG", "images/full.PNG"}; 
 	private BufferedImage image1, image2;
 	
-	public HealthBar(){ 
+	public HealthBar(){ //constructor
 		xp = 0; 
 		isFull = false; 
 		try {
@@ -40,7 +41,7 @@ public class HealthBar{
 		return isFull; 
 	}
 
-	public void myDraw(Graphics g){
+	public void myDraw(Graphics g){ //Draw out the health
 		for(int i = 1; i < 5; i++){
 			if(xp >= 100 - (25*(4-i))){
 				g.drawImage(image2, 0, 10+ (i*30), null);
