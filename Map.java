@@ -16,16 +16,14 @@ import java.awt.event.KeyListener;
 public class Map extends JPanel implements ActionListener{
 	//Declaring variables
 	private Image pic; 
-	private JButton b1, b2, b3, b4, b5;
+	private JButton b1, b2, b3, b4, b5, back;
 	
 	public Map(){
-		//background
 		ImageIcon obj = new ImageIcon("images/map.PNG");  
 		pic = obj.getImage();
 		
 		this.setLayout(null);
 		
-		//Buttons to different JPanels
 		b1 = new JButton("");
 		b1.setBounds(80, 120, 185, 90);
 		this.add(b1);
@@ -60,6 +58,11 @@ public class Map extends JPanel implements ActionListener{
 		b5.addActionListener(this);
 		b5.setContentAreaFilled(false);
 		b5.setBorderPainted(false);
+		
+		back = new JButton("Back");
+		back.setBounds(10, 10, 70, 30);
+		back.addActionListener(this);
+		this.add(back);
 	}
 
 	public void paintComponent(Graphics g) {
@@ -82,6 +85,9 @@ public class Map extends JPanel implements ActionListener{
 		}
 		else if(e.getSource() == b5){
 			BeFullMain.cards.last(BeFullMain.cont);
+		}
+		else if(e.getSource() == back){
+			BeFullMain.cards.previous(BeFullMain.cont);
 		}
 	}
 }
