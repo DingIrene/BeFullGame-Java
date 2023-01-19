@@ -71,9 +71,6 @@ public class MealsDeck extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource() == b1){
 			for(int i = 0; i < 6; i++){
-				/*if(GroceryGame.frigo.getNumberOfItem(i) <= cake[i]){
-					check += 1;
-				}*/
 				int need = cake[i]; 
 				if(check(GroceryGame.frigo.getNumberOfItem(i), need) == false){
 					checker += 1;
@@ -85,18 +82,13 @@ public class MealsDeck extends JPanel implements ActionListener{
 			else{
 				cooking();
 				bar.addXP(cake[6]);
+				bar.isFull();
+				bar.isColored();
 				for(int i = 0; i < 6; i++){
 					GroceryGame.frigo.removeFrom(i, cake[i]);
 				}
 			}
 			checker = 0;
-			/*if(enough == false){
-					JOptionPane.showMessageDialog(null,"Not enough ingredients!","", JOptionPane.INFORMATION_MESSAGE);
-			}
-			else{
-				cooking();
-				bar.addXP(cake[6]); 
-			}*/
 		}
 		else if(e.getSource() == b2){
 			for(int i = 0; i < 6; i++){
@@ -111,6 +103,8 @@ public class MealsDeck extends JPanel implements ActionListener{
 			else{
 				cooking();
 				bar.addXP(smoothie[6]);
+				bar.isFull();
+				bar.isColored();
 				for(int i = 0; i < 6; i++){
 					GroceryGame.frigo.removeFrom(i, smoothie[i]);
 				}
@@ -130,6 +124,8 @@ public class MealsDeck extends JPanel implements ActionListener{
 			else{
 				cooking();
 				bar.addXP(roll[6]);
+				bar.isFull();
+				bar.isColored();
 				for(int i = 0; i < 6; i++){
 					GroceryGame.frigo.removeFrom(i, roll[i]);
 				}
