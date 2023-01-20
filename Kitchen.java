@@ -27,7 +27,7 @@ class Kitchen extends JPanel implements ActionListener{
 		ImageIcon obj = new ImageIcon("images/Kitchen.PNG"); 
 		pic = obj.getImage();
 		deck = new MealsDeck(); 
-
+	
 		fridge = new JButton("Fridge");
 		fridge.addActionListener(this); 
 		

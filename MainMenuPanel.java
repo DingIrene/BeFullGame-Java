@@ -14,8 +14,6 @@ import javax.imageio.*;
 import java.util.*;
 import java.io.*;
 
-//Need to re-make the layout so that the health bar is at the south, bottom of the panel
-
 class MainMenuPanel extends JPanel implements ActionListener{
 	//Declaring variables
 	private JButton b1,b2,b3; 
@@ -28,15 +26,12 @@ class MainMenuPanel extends JPanel implements ActionListener{
 		b3 = new JButton("Exit"); 
 		 
 		JLabel background = new JLabel(new ImageIcon("images/TitleScreen.jpg"));
-		//JLabel healthBar = new JLabel(new ImageIcon("images/Bar.PNG"));
-		//this.setLayout(new BorderLayout());
 
 		this.add(b1);
 		this.add(b2);  
 		this.add(b3);
 		this.add(background); 
-		//this.add(healthBar, BorderLayout.SOUTH);
-	  
+		
 		b1.addActionListener(this);
 		b2.addActionListener(this);
 		b3.addActionListener(this);
@@ -44,13 +39,13 @@ class MainMenuPanel extends JPanel implements ActionListener{
 		b2.setContentAreaFilled(false);
 		b3.setContentAreaFilled(false);
 		
-		//instructions= new ImageIcon("InstructionsPoints.PNG"); png of the instructions
+		instructions= new ImageIcon("images/instructions.PNG"); 
 	}
 	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==b1){
 			//Pop up window of the instructions
-			JOptionPane.showMessageDialog(null,"","Instructions", JOptionPane.INFORMATION_MESSAGE,instructions);
+			JOptionPane.showMessageDialog(null,instructions,"Instructions", JOptionPane.INFORMATION_MESSAGE);
 		}	
 		else if (e.getSource()==b2){ 
 			BeFullMain.cards.next(BeFullMain.cont);

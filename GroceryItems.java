@@ -42,8 +42,9 @@ class GroceryItems{
         }
 	}
 	
+
 	public void isCaught(boolean caught){
-		this.caught = caught;
+		this.caught = caught; 
 	}
 	
 	public boolean caughtc(){

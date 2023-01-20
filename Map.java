@@ -19,11 +19,13 @@ public class Map extends JPanel implements ActionListener{
 	private JButton b1, b2, b3, b4, b5, back;
 	
 	public Map(){
+		//background
 		ImageIcon obj = new ImageIcon("images/map.PNG");  
 		pic = obj.getImage();
 		
 		this.setLayout(null);
 		
+		//Buttons to different JPanels
 		b1 = new JButton("");
 		b1.setBounds(80, 120, 185, 90);
 		this.add(b1);
@@ -61,8 +63,8 @@ public class Map extends JPanel implements ActionListener{
 		
 		back = new JButton("Back");
 		back.setBounds(10, 10, 70, 30);
-		back.addActionListener(this);
 		this.add(back);
+		back.addActionListener(this);
 	}
 
 	public void paintComponent(Graphics g) {

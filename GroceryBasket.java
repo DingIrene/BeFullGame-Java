@@ -76,6 +76,6 @@ class GroceryBasket{
 	}
 	
 	public void boundaryRight(){
-		x = 780; 
+		x = 650; 
 	}
 }

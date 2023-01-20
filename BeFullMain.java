@@ -13,7 +13,7 @@ class BeFullMain extends JFrame{
 	static CardLayout cards;
 	static Container cont; 
 	
-	public BeFullMain(){
+	public BeFullMain(){ //constuctor
 		cont = getContentPane();
 		cards = new CardLayout();
 		cont.setLayout(cards);
